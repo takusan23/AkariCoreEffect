@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "io.github.takusan23.akaricoreeffect"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "io.github.takusan23.akaricoreeffect"
         minSdk = 21
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -38,7 +38,7 @@ android {
 
 dependencies {
 
-    implementation("io.github.takusan23:akaricore:5.0.0-alpha02")
+    implementation("io.github.takusan23:akaricore:6.3.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

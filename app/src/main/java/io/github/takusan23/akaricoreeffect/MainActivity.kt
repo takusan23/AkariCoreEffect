@@ -174,7 +174,7 @@ fun MainScreen() {
                             val hasNextFrame = akariVideoDecoder.seekTo(currentPositionMs)
 
                             // 描画する
-                            drawSurfaceTexture(akariGraphicsSurfaceTexture)
+                            drawSurfaceTexture(akariGraphicsSurfaceTexture, nullOrTextureUpdateTimeoutMs = 500)
 
                             // エフェクトを適用
                             repeat(25) {
@@ -186,7 +186,7 @@ fun MainScreen() {
 
                             // ループ継続情報
                             loopContinueData.currentFrameNanoSeconds = currentPositionMs * AkariGraphicsProcessor.LoopContinueData.MILLI_SECONDS_TO_NANO_SECONDS
-                            loopContinueData.isRequestNextFrame = hasNextFrame
+                            loopContinueData.isRequestNextFrame = hasNextFrame.isSuccessful
 
                             currentPositionMs += frameMs
                             loopContinueData
